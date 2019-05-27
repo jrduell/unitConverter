@@ -1,24 +1,155 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="metricConverterApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PaddlesBlurred" translatesAutoresizingMaskIntoConstraints="NO" id="YRb-Gy-LKX">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_transparent" translatesAutoresizingMaskIntoConstraints="NO" id="2V8-Vp-7CH">
+                                <rect key="frame" x="100" y="25" width="175" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="Drx-C8-97l"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="YUT-49-taN">
+                                <rect key="frame" x="20" y="205" width="335" height="220"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nU-hd-kJx" customClass="CustomBtn" customModule="metricConverterApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="omH-2x-HVx"/>
+                                        </constraints>
+                                        <state key="normal" title="Metric Conversion"/>
+                                        <connections>
+                                            <action selector="onMetricTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aMv-tY-vdu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gti-mM-3o8" customClass="CustomBtn" customModule="metricConverterApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="85" width="335" height="50"/>
+                                        <state key="normal" title="Volume Finder"/>
+                                        <connections>
+                                            <action selector="onVolumeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a7M-4l-iz8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHA-EG-rRZ" customClass="CustomBtn" customModule="metricConverterApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="170" width="335" height="50"/>
+                                        <state key="normal" title="Area Finder"/>
+                                        <connections>
+                                            <action selector="onAreaTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IMV-pf-mPN"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="YRb-Gy-LKX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="8rh-xw-pC5"/>
+                            <constraint firstItem="YUT-49-taN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="CQc-L1-4t4"/>
+                            <constraint firstItem="YUT-49-taN" firstAttribute="top" secondItem="2V8-Vp-7CH" secondAttribute="bottom" constant="50" id="E9I-jn-FRF"/>
+                            <constraint firstAttribute="bottom" secondItem="YRb-Gy-LKX" secondAttribute="bottom" id="Hl5-1b-sS6"/>
+                            <constraint firstItem="2V8-Vp-7CH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LFA-mj-KCB"/>
+                            <constraint firstItem="YRb-Gy-LKX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="PP4-l8-RK4"/>
+                            <constraint firstItem="2V8-Vp-7CH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="100" id="cSd-ay-GDi"/>
+                            <constraint firstAttribute="trailing" secondItem="YRb-Gy-LKX" secondAttribute="trailing" id="cpr-qO-SH6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YUT-49-taN" secondAttribute="trailing" constant="20" id="p92-Sb-xjQ"/>
+                            <constraint firstAttribute="trailing" secondItem="2V8-Vp-7CH" secondAttribute="trailing" constant="100" id="q2d-uJ-f1N"/>
+                            <constraint firstItem="2V8-Vp-7CH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="rsm-7x-RJe"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <segue destination="vT9-hC-HUP" kind="show" identifier="convertVCSegue" id="C0w-kx-kwl"/>
+                        <segue destination="UAe-4E-CCf" kind="show" identifier="findVolumeVCSegue" id="IcG-E4-goX"/>
+                        <segue destination="cIg-oi-hra" kind="show" identifier="findAreaVCSegue" id="KrO-qP-aaZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="z6X-d4-DEy">
+            <objects>
+                <viewController id="UAe-4E-CCf" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a7s-k2-oNV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ywO-qb-KdU"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uuI-U7-tfo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1001" y="-550"/>
+        </scene>
+        <!--ConvertVC-->
+        <scene sceneID="Enp-wu-zmC">
+            <objects>
+                <viewController id="vT9-hC-HUP" customClass="convertVC" customModule="metricConverterApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N7L-XA-JKh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pjF-gz-ilR">
+                                <rect key="frame" x="25" y="35" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="EGe-w5-7vv"/>
+                                    <constraint firstAttribute="height" constant="50" id="WsC-TB-UAk"/>
+                                </constraints>
+                                <state key="normal" image="backButton"/>
+                                <connections>
+                                    <segue destination="yYk-Po-YSd" kind="unwind" unwindAction="unwindToMainVCWithUnwindSegue:" id="GP1-Sw-WAD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pjF-gz-ilR" firstAttribute="top" secondItem="N7L-XA-JKh" secondAttribute="top" constant="35" id="d0T-bQ-6bT"/>
+                            <constraint firstItem="pjF-gz-ilR" firstAttribute="leading" secondItem="N7L-XA-JKh" secondAttribute="leading" constant="25" id="oLM-0w-7vK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MHw-MM-oBH"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RD4-uS-weB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="yYk-Po-YSd" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="997.60000000000002" y="132.68365817091455"/>
+        </scene>
+        <!--Find AreaVC-->
+        <scene sceneID="zde-Ar-JYq">
+            <objects>
+                <viewController id="cIg-oi-hra" customClass="findAreaVC" customModule="metricConverterApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="l5k-JZ-a7I">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="RRR-jj-sVV"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RXb-Ks-hRO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1001" y="872"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="PaddlesBlurred" width="3462" height="5198"/>
+        <image name="backButton" width="29" height="24"/>
+        <image name="logo_transparent" width="1200" height="1200"/>
+    </resources>
 </document>

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  convertVC.swift
 //  metricConverterApp
 //
 //  Created by jacob on 5/27/19.
@@ -8,13 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class convertVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
 
+        // Do any additional setup after loading the view.
+    }
+    
+    
 
 }
-
