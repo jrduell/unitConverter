@@ -135,7 +135,7 @@
                                     <segue destination="yYk-Po-YSd" kind="unwind" unwindAction="unwindToMainVCWithUnwindSegue:" id="KVu-ON-QVi"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dQj-AO-dJG">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="dQj-AO-dJG">
                                 <rect key="frame" x="20" y="110" width="335" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNk-G3-5nr" customClass="CustomBtn" customModule="metricConverterApp" customModuleProvider="target">
@@ -149,13 +149,17 @@
                                         </connections>
                                     </button>
                                     <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ef-DY-tHP">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="5U7-6b-stE"/>
+                                        </constraints>
                                     </pickerView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="7ef-DY-tHP" secondAttribute="trailing" id="ALw-Vs-HEc"/>
-                                    <constraint firstItem="7ef-DY-tHP" firstAttribute="width" secondItem="iNk-G3-5nr" secondAttribute="width" id="cuH-Gj-XZB"/>
-                                    <constraint firstItem="7ef-DY-tHP" firstAttribute="leading" secondItem="dQj-AO-dJG" secondAttribute="leading" id="mbn-6g-gO8"/>
+                                    <constraint firstAttribute="trailing" secondItem="7ef-DY-tHP" secondAttribute="trailing" id="5Xg-dG-PLT"/>
+                                    <constraint firstItem="7ef-DY-tHP" firstAttribute="leading" secondItem="dQj-AO-dJG" secondAttribute="leading" id="T8i-Bz-2lA"/>
+                                    <constraint firstItem="iNk-G3-5nr" firstAttribute="top" secondItem="dQj-AO-dJG" secondAttribute="top" id="d7p-In-Z6w"/>
+                                    <constraint firstItem="7ef-DY-tHP" firstAttribute="width" secondItem="iNk-G3-5nr" secondAttribute="width" id="q0g-0s-ZyS"/>
                                 </constraints>
                             </stackView>
                         </subviews>

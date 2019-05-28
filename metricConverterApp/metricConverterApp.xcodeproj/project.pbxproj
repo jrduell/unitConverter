@@ -23,6 +23,10 @@
 		16E34E45229C6CB0006FC0DD /* findVolumeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E34E43229C6CB0006FC0DD /* findVolumeVC.swift */; };
 		16E34E47229C6D40006FC0DD /* findAreaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E34E46229C6D40006FC0DD /* findAreaVC.swift */; };
 		16E34E48229C6D40006FC0DD /* findAreaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E34E46229C6D40006FC0DD /* findAreaVC.swift */; };
+		16E34E4A229CBD64006FC0DD /* customPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E34E49229CBD64006FC0DD /* customPickerView.swift */; };
+		16E34E4B229CBD64006FC0DD /* customPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E34E49229CBD64006FC0DD /* customPickerView.swift */; };
+		16E34E4D229CBDB8006FC0DD /* customStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E34E4C229CBDB8006FC0DD /* customStackView.swift */; };
+		16E34E4E229CBDB8006FC0DD /* customStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E34E4C229CBDB8006FC0DD /* customStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,8 @@
 		16E34E40229C6760006FC0DD /* userData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userData.swift; sourceTree = "<group>"; };
 		16E34E43229C6CB0006FC0DD /* findVolumeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = findVolumeVC.swift; sourceTree = "<group>"; };
 		16E34E46229C6D40006FC0DD /* findAreaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = findAreaVC.swift; sourceTree = "<group>"; };
+		16E34E49229CBD64006FC0DD /* customPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customPickerView.swift; sourceTree = "<group>"; };
+		16E34E4C229CBDB8006FC0DD /* customStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customStackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				16E34E38229C283A006FC0DD /* CustomBtn.swift */,
+				16E34E49229CBD64006FC0DD /* customPickerView.swift */,
+				16E34E4C229CBDB8006FC0DD /* customStackView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -246,8 +254,10 @@
 				16E34E44229C6CB0006FC0DD /* findVolumeVC.swift in Sources */,
 				16298677229C2563001A5A7C /* MainVC.swift in Sources */,
 				16298675229C2563001A5A7C /* AppDelegate.swift in Sources */,
+				16E34E4A229CBD64006FC0DD /* customPickerView.swift in Sources */,
 				16E34E41229C6760006FC0DD /* userData.swift in Sources */,
 				16E34E39229C283A006FC0DD /* CustomBtn.swift in Sources */,
+				16E34E4D229CBDB8006FC0DD /* customStackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +267,9 @@
 			files = (
 				1629868A229C2566001A5A7C /* metricConverterAppTests.swift in Sources */,
 				16E34E3A229C283A006FC0DD /* CustomBtn.swift in Sources */,
+				16E34E4B229CBD64006FC0DD /* customPickerView.swift in Sources */,
 				16E34E45229C6CB0006FC0DD /* findVolumeVC.swift in Sources */,
+				16E34E4E229CBDB8006FC0DD /* customStackView.swift in Sources */,
 				16E34E42229C6760006FC0DD /* userData.swift in Sources */,
 				16E34E48229C6D40006FC0DD /* findAreaVC.swift in Sources */,
 				16E34E3E229C5FAE006FC0DD /* convertVC.swift in Sources */,
