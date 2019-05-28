@@ -83,20 +83,38 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--Find VolumeVC-->
         <scene sceneID="z6X-d4-DEy">
             <objects>
-                <viewController id="UAe-4E-CCf" sceneMemberID="viewController">
+                <viewController id="UAe-4E-CCf" customClass="findVolumeVC" customModule="metricConverterApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a7s-k2-oNV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icV-Xk-eye">
+                                <rect key="frame" x="25" y="35" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="2dH-nV-00G"/>
+                                    <constraint firstAttribute="width" constant="50" id="cfD-6a-DCt"/>
+                                </constraints>
+                                <state key="normal" image="backButton"/>
+                                <connections>
+                                    <segue destination="aEN-hg-rwA" kind="unwind" unwindAction="unwindToMainVCWithUnwindSegue:" id="OEO-4B-FJo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="icV-Xk-eye" firstAttribute="top" secondItem="a7s-k2-oNV" secondAttribute="top" constant="35" id="Hoi-fr-hE0"/>
+                            <constraint firstItem="icV-Xk-eye" firstAttribute="leading" secondItem="a7s-k2-oNV" secondAttribute="leading" constant="25" id="QUf-7s-X9W"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ywO-qb-KdU"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uuI-U7-tfo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="aEN-hg-rwA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1001" y="-550"/>
+            <point key="canvasLocation" x="969" y="-603"/>
         </scene>
         <!--ConvertVC-->
         <scene sceneID="Enp-wu-zmC">
@@ -114,22 +132,52 @@
                                 </constraints>
                                 <state key="normal" image="backButton"/>
                                 <connections>
-                                    <segue destination="yYk-Po-YSd" kind="unwind" unwindAction="unwindToMainVCWithUnwindSegue:" id="GP1-Sw-WAD"/>
+                                    <segue destination="yYk-Po-YSd" kind="unwind" unwindAction="unwindToMainVCWithUnwindSegue:" id="KVu-ON-QVi"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dQj-AO-dJG">
+                                <rect key="frame" x="20" y="110" width="335" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNk-G3-5nr" customClass="CustomBtn" customModule="metricConverterApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="mgf-ed-YEr"/>
+                                        </constraints>
+                                        <state key="normal" title="Select Unit"/>
+                                        <connections>
+                                            <action selector="onSelectTapped:" destination="vT9-hC-HUP" eventType="touchUpInside" id="djW-Vd-44R"/>
+                                        </connections>
+                                    </button>
+                                    <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ef-DY-tHP">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="0.0"/>
+                                    </pickerView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="7ef-DY-tHP" secondAttribute="trailing" id="ALw-Vs-HEc"/>
+                                    <constraint firstItem="7ef-DY-tHP" firstAttribute="width" secondItem="iNk-G3-5nr" secondAttribute="width" id="cuH-Gj-XZB"/>
+                                    <constraint firstItem="7ef-DY-tHP" firstAttribute="leading" secondItem="dQj-AO-dJG" secondAttribute="leading" id="mbn-6g-gO8"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="dQj-AO-dJG" firstAttribute="top" secondItem="pjF-gz-ilR" secondAttribute="bottom" constant="25" id="IrD-TJ-pT6"/>
+                            <constraint firstItem="dQj-AO-dJG" firstAttribute="leading" secondItem="MHw-MM-oBH" secondAttribute="leading" constant="20" id="U3r-en-4ad"/>
                             <constraint firstItem="pjF-gz-ilR" firstAttribute="top" secondItem="N7L-XA-JKh" secondAttribute="top" constant="35" id="d0T-bQ-6bT"/>
                             <constraint firstItem="pjF-gz-ilR" firstAttribute="leading" secondItem="N7L-XA-JKh" secondAttribute="leading" constant="25" id="oLM-0w-7vK"/>
+                            <constraint firstItem="MHw-MM-oBH" firstAttribute="trailing" secondItem="dQj-AO-dJG" secondAttribute="trailing" constant="20" id="wON-G5-xcp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MHw-MM-oBH"/>
                     </view>
+                    <connections>
+                        <outlet property="selectBtn" destination="iNk-G3-5nr" id="2Xz-LC-tYa"/>
+                        <outlet property="unitDropDown" destination="7ef-DY-tHP" id="67f-fV-o46"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RD4-uS-weB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="yYk-Po-YSd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="997.60000000000002" y="132.68365817091455"/>
+            <point key="canvasLocation" x="968.79999999999995" y="213.64317841079463"/>
         </scene>
         <!--Find AreaVC-->
         <scene sceneID="zde-Ar-JYq">
@@ -138,13 +186,31 @@
                     <view key="view" contentMode="scaleToFill" id="l5k-JZ-a7I">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8N-eB-hQ4">
+                                <rect key="frame" x="25" y="35" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="3w2-z2-vuH"/>
+                                    <constraint firstAttribute="width" constant="50" id="Z4f-mK-Bhc"/>
+                                </constraints>
+                                <state key="normal" image="backButton"/>
+                                <connections>
+                                    <segue destination="f4h-Yl-guS" kind="unwind" unwindAction="unwindToMainVCWithUnwindSegue:" id="6iU-RA-vLw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="P8N-eB-hQ4" firstAttribute="leading" secondItem="RRR-jj-sVV" secondAttribute="leading" constant="25" id="WpZ-kM-rKU"/>
+                            <constraint firstItem="P8N-eB-hQ4" firstAttribute="top" secondItem="l5k-JZ-a7I" secondAttribute="top" constant="35" id="Xqz-hh-STq"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="RRR-jj-sVV"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RXb-Ks-hRO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="f4h-Yl-guS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1001" y="872"/>
+            <point key="canvasLocation" x="969" y="1011"/>
         </scene>
     </scenes>
     <resources>
