@@ -145,7 +145,7 @@
                                         </constraints>
                                         <state key="normal" title="Select Unit"/>
                                         <connections>
-                                            <action selector="onSelectTapped:" destination="vT9-hC-HUP" eventType="touchUpInside" id="djW-Vd-44R"/>
+                                            <action selector="onCurrentSelectTapped:" destination="vT9-hC-HUP" eventType="touchUpInside" id="djW-Vd-44R"/>
                                         </connections>
                                     </button>
                                     <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ef-DY-tHP">
@@ -162,20 +162,53 @@
                                     <constraint firstItem="7ef-DY-tHP" firstAttribute="width" secondItem="iNk-G3-5nr" secondAttribute="width" id="q0g-0s-ZyS"/>
                                 </constraints>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Lcj-AZ-Pql">
+                                <rect key="frame" x="20" y="300" width="335" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wVY-Xf-Bwa" customClass="CustomBtn" customModule="metricConverterApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="W8p-vI-IhY"/>
+                                        </constraints>
+                                        <state key="normal" title="Select Unit"/>
+                                        <connections>
+                                            <action selector="onDesiredSelectTapped:" destination="vT9-hC-HUP" eventType="touchUpInside" id="Coh-Hd-1aE"/>
+                                        </connections>
+                                    </button>
+                                    <pickerView hidden="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B5g-4e-ZPd">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="jLz-VS-jnZ"/>
+                                        </constraints>
+                                    </pickerView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="B5g-4e-ZPd" secondAttribute="trailing" id="U1e-zX-Csw"/>
+                                    <constraint firstItem="wVY-Xf-Bwa" firstAttribute="leading" secondItem="Lcj-AZ-Pql" secondAttribute="leading" id="apI-xz-bpg"/>
+                                    <constraint firstItem="wVY-Xf-Bwa" firstAttribute="top" secondItem="Lcj-AZ-Pql" secondAttribute="top" id="njQ-1G-Iid"/>
+                                    <constraint firstItem="B5g-4e-ZPd" firstAttribute="leading" secondItem="Lcj-AZ-Pql" secondAttribute="leading" id="qHI-iE-yBs"/>
+                                    <constraint firstAttribute="trailing" secondItem="wVY-Xf-Bwa" secondAttribute="trailing" id="rdi-qC-WdB"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="dQj-AO-dJG" firstAttribute="top" secondItem="pjF-gz-ilR" secondAttribute="bottom" constant="25" id="IrD-TJ-pT6"/>
                             <constraint firstItem="dQj-AO-dJG" firstAttribute="leading" secondItem="MHw-MM-oBH" secondAttribute="leading" constant="20" id="U3r-en-4ad"/>
                             <constraint firstItem="pjF-gz-ilR" firstAttribute="top" secondItem="N7L-XA-JKh" secondAttribute="top" constant="35" id="d0T-bQ-6bT"/>
+                            <constraint firstItem="Lcj-AZ-Pql" firstAttribute="leading" secondItem="dQj-AO-dJG" secondAttribute="leading" id="hlc-rZ-2il"/>
+                            <constraint firstItem="Lcj-AZ-Pql" firstAttribute="trailing" secondItem="dQj-AO-dJG" secondAttribute="trailing" id="nQr-9d-wfY"/>
                             <constraint firstItem="pjF-gz-ilR" firstAttribute="leading" secondItem="N7L-XA-JKh" secondAttribute="leading" constant="25" id="oLM-0w-7vK"/>
                             <constraint firstItem="MHw-MM-oBH" firstAttribute="trailing" secondItem="dQj-AO-dJG" secondAttribute="trailing" constant="20" id="wON-G5-xcp"/>
+                            <constraint firstItem="Lcj-AZ-Pql" firstAttribute="top" secondItem="pjF-gz-ilR" secondAttribute="bottom" constant="215" id="ycE-el-chB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MHw-MM-oBH"/>
                     </view>
                     <connections>
-                        <outlet property="selectBtn" destination="iNk-G3-5nr" id="2Xz-LC-tYa"/>
-                        <outlet property="unitDropDown" destination="7ef-DY-tHP" id="67f-fV-o46"/>
+                        <outlet property="CurrentUnitPickerView" destination="7ef-DY-tHP" id="8UL-Qq-5g0"/>
+                        <outlet property="DesiredUnitPickerView" destination="B5g-4e-ZPd" id="1Qg-s1-weQ"/>
+                        <outlet property="currentSelectBtn" destination="iNk-G3-5nr" id="2Xz-LC-tYa"/>
+                        <outlet property="desiredSelectBtn" destination="wVY-Xf-Bwa" id="lls-Wf-Bgg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RD4-uS-weB" userLabel="First Responder" sceneMemberID="firstResponder"/>
