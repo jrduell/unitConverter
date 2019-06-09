@@ -13,6 +13,8 @@ class convertVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     let currentPrefix: Array = ["nano","micro","milli","centi", "deci", "unit", "deka", "hecto", "kilo", "mega", "giga", "tera"]
     let desiredPrefix: Array = ["nano","micro","milli","centi", "deci", "unit", "deka", "hecto", "kilo", "mega", "giga", "tera"]
     
+    @IBOutlet weak var resultLbl: UILabel!
+    @IBOutlet weak var unitTxtField: UITextField!
     @IBOutlet weak var currentSelectBtn: CustomBtn!
     @IBOutlet weak var desiredSelectBtn: CustomBtn!
     @IBOutlet weak var CurrentUnitPickerView: UIPickerView!
@@ -28,6 +30,14 @@ class convertVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         
         DesiredUnitPickerView.dataSource = self
         DesiredUnitPickerView.delegate = self
+        
+        let calcBtn = UIButton(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 60))
+        calcBtn.backgroundColor = #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
+        calcBtn.setTitle("Calculate", for: .normal)
+        calcBtn.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
+        calcBtn.addTarget(self, action: #selector(convertVC.metricConvert), for: .touchUpInside)
+        unitTxtField.inputAccessoryView = calcBtn
+        
     }
     
     
@@ -71,10 +81,10 @@ class convertVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView.tag == 0 {
-            currentUnit = currentPrefix.firstIndex(of: currentPrefix[row])!
+            currentUnitLocal = currentPrefix.firstIndex(of: currentPrefix[row])!
             return currentPrefix[row]
         } else {
-            desiredUnit = desiredPrefix.firstIndex(of: desiredPrefix[row])!
+            desiredUnitLocal = desiredPrefix.firstIndex(of: desiredPrefix[row])!
             return desiredPrefix[row]
         }
     }
@@ -84,16 +94,33 @@ class convertVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
 
     
     //array key conversion to value
-    var arraySelection: Int = 0
-    var desiredUnit = 0
-    var currentUnit = 0
-    var ValDifference = 0
-    var currentPrint = ""
-    var desiredPrint = ""
+    var currentUnitLocal = 0
+    var desiredUnitLocal = 0
     
-    func metricConvert(currentUnit: Int, desiredUnit: Int, distance: Double) {
+    @objc func metricConvert() {
+        
+        if let unitSelect = unitTxtField.text {
+            if let unit = Double(unitSelect) {
+                view.endEditing(true)
+                resultLbl.text = "\(calculateLogic.getConverted(currentUnit: currentUnitLocal, desiredUnit: desiredUnitLocal, amount: unit)) \(desiredPrefix[desiredUnitLocal])"
+                
+                
+            }
+    
+        }
+    
+    }
+    
+    
+    
+    @IBAction func clearButtonPressed(_ sender: Any) {
+        resultLbl.text = "Metric Conversion"
+        unitTxtField.text = ""
         
     }
+    
+    
+    
     
     
     

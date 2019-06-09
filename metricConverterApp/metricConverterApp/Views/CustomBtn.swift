@@ -23,7 +23,7 @@ class CustomBtn: UIButton {
     
     func customizeView(){
         backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.3)
-        layer.cornerRadius = 1.0
+        layer.cornerRadius = 5.0
         layer.borderWidth = 3.0
         layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)

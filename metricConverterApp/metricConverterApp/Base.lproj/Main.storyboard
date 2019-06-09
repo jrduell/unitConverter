@@ -28,7 +28,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="YUT-49-taN">
-                                <rect key="frame" x="20" y="205" width="335" height="220"/>
+                                <rect key="frame" x="20" y="205" width="335" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nU-hd-kJx" customClass="CustomBtn" customModule="metricConverterApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
@@ -40,15 +40,15 @@
                                             <action selector="onMetricTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aMv-tY-vdu"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gti-mM-3o8" customClass="CustomBtn" customModule="metricConverterApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="85" width="335" height="50"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gti-mM-3o8" customClass="CustomBtn" customModule="metricConverterApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="0.0"/>
                                         <state key="normal" title="Volume Finder"/>
                                         <connections>
                                             <action selector="onVolumeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a7M-4l-iz8"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHA-EG-rRZ" customClass="CustomBtn" customModule="metricConverterApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="170" width="335" height="50"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHA-EG-rRZ" customClass="CustomBtn" customModule="metricConverterApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="0.0"/>
                                         <state key="normal" title="Area Finder"/>
                                         <connections>
                                             <action selector="onAreaTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IMV-pf-mPN"/>
@@ -135,38 +135,46 @@
                                     <segue destination="yYk-Po-YSd" kind="unwind" unwindAction="unwindToMainVCWithUnwindSegue:" id="KVu-ON-QVi"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="dQj-AO-dJG">
-                                <rect key="frame" x="20" y="110" width="335" height="50"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9Vu-DJ-qbz">
+                                <rect key="frame" x="25" y="120" width="325" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNk-G3-5nr" customClass="CustomBtn" customModule="metricConverterApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="DJi-dY-Xci">
+                                        <rect key="frame" x="0.0" y="0.0" width="325" height="50"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7W7-DA-tEp">
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="50"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNk-G3-5nr" customClass="CustomBtn" customModule="metricConverterApp" customModuleProvider="target">
+                                                <rect key="frame" x="165" y="0.0" width="160" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="mgf-ed-YEr"/>
+                                                </constraints>
+                                                <state key="normal" title="Select"/>
+                                                <connections>
+                                                    <action selector="onCurrentSelectTapped:" destination="vT9-hC-HUP" eventType="touchUpInside" id="djW-Vd-44R"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="mgf-ed-YEr"/>
+                                            <constraint firstAttribute="height" constant="50" id="DkZ-2Z-dwm"/>
                                         </constraints>
-                                        <state key="normal" title="Select Unit"/>
-                                        <connections>
-                                            <action selector="onCurrentSelectTapped:" destination="vT9-hC-HUP" eventType="touchUpInside" id="djW-Vd-44R"/>
-                                        </connections>
-                                    </button>
+                                    </stackView>
                                     <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ef-DY-tHP">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="325" height="80"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="5U7-6b-stE"/>
+                                            <constraint firstAttribute="height" constant="80" id="R5g-TY-a5e"/>
                                         </constraints>
                                     </pickerView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="7ef-DY-tHP" secondAttribute="trailing" id="5Xg-dG-PLT"/>
-                                    <constraint firstItem="7ef-DY-tHP" firstAttribute="leading" secondItem="dQj-AO-dJG" secondAttribute="leading" id="T8i-Bz-2lA"/>
-                                    <constraint firstItem="iNk-G3-5nr" firstAttribute="top" secondItem="dQj-AO-dJG" secondAttribute="top" id="d7p-In-Z6w"/>
-                                    <constraint firstItem="7ef-DY-tHP" firstAttribute="width" secondItem="iNk-G3-5nr" secondAttribute="width" id="q0g-0s-ZyS"/>
-                                </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Lcj-AZ-Pql">
-                                <rect key="frame" x="20" y="300" width="335" height="50"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="97X-vL-HNR">
+                                <rect key="frame" x="25" y="285" width="325" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wVY-Xf-Bwa" customClass="CustomBtn" customModule="metricConverterApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="325" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="W8p-vI-IhY"/>
                                         </constraints>
@@ -175,32 +183,50 @@
                                             <action selector="onDesiredSelectTapped:" destination="vT9-hC-HUP" eventType="touchUpInside" id="Coh-Hd-1aE"/>
                                         </connections>
                                     </button>
-                                    <pickerView hidden="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B5g-4e-ZPd">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="100"/>
+                                    <pickerView hidden="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B5g-4e-ZPd" customClass="customPickerView" customModule="metricConverterApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="325" height="80"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="jLz-VS-jnZ"/>
+                                            <constraint firstAttribute="height" constant="80" id="d5Y-Ul-toT"/>
                                         </constraints>
                                     </pickerView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="B5g-4e-ZPd" secondAttribute="trailing" id="U1e-zX-Csw"/>
-                                    <constraint firstItem="wVY-Xf-Bwa" firstAttribute="leading" secondItem="Lcj-AZ-Pql" secondAttribute="leading" id="apI-xz-bpg"/>
-                                    <constraint firstItem="wVY-Xf-Bwa" firstAttribute="top" secondItem="Lcj-AZ-Pql" secondAttribute="top" id="njQ-1G-Iid"/>
-                                    <constraint firstItem="B5g-4e-ZPd" firstAttribute="leading" secondItem="Lcj-AZ-Pql" secondAttribute="leading" id="qHI-iE-yBs"/>
-                                    <constraint firstAttribute="trailing" secondItem="wVY-Xf-Bwa" secondAttribute="trailing" id="rdi-qC-WdB"/>
-                                </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Metric Conversion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ses-u8-wQG">
+                                <rect key="frame" x="100" y="50" width="175" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1w5-db-8Dx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yL-NB-5lD" customClass="CustomBtn" customModule="metricConverterApp" customModuleProvider="target">
+                                <rect key="frame" x="150" y="425" width="75" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ljw-i1-78v"/>
+                                </constraints>
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="clearButtonPressed:" destination="vT9-hC-HUP" eventType="touchUpInside" id="Qvs-Sg-BY0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="dQj-AO-dJG" firstAttribute="top" secondItem="pjF-gz-ilR" secondAttribute="bottom" constant="25" id="IrD-TJ-pT6"/>
-                            <constraint firstItem="dQj-AO-dJG" firstAttribute="leading" secondItem="MHw-MM-oBH" secondAttribute="leading" constant="20" id="U3r-en-4ad"/>
+                            <constraint firstItem="97X-vL-HNR" firstAttribute="leading" secondItem="MHw-MM-oBH" secondAttribute="leading" constant="25" id="2pR-k7-Jst"/>
+                            <constraint firstItem="Ses-u8-wQG" firstAttribute="top" secondItem="MHw-MM-oBH" secondAttribute="top" constant="30" id="67z-OE-fS4"/>
+                            <constraint firstItem="9Vu-DJ-qbz" firstAttribute="leading" secondItem="MHw-MM-oBH" secondAttribute="leading" constant="25" id="9ah-dC-JKi"/>
+                            <constraint firstItem="MHw-MM-oBH" firstAttribute="trailing" secondItem="Ses-u8-wQG" secondAttribute="trailing" constant="100" id="FOA-BA-lzV"/>
+                            <constraint firstItem="MHw-MM-oBH" firstAttribute="trailing" secondItem="97X-vL-HNR" secondAttribute="trailing" constant="25" id="FtP-WC-NkI"/>
+                            <constraint firstItem="5yL-NB-5lD" firstAttribute="leading" secondItem="MHw-MM-oBH" secondAttribute="leading" constant="150" id="YNa-h5-wiG"/>
                             <constraint firstItem="pjF-gz-ilR" firstAttribute="top" secondItem="N7L-XA-JKh" secondAttribute="top" constant="35" id="d0T-bQ-6bT"/>
-                            <constraint firstItem="Lcj-AZ-Pql" firstAttribute="leading" secondItem="dQj-AO-dJG" secondAttribute="leading" id="hlc-rZ-2il"/>
-                            <constraint firstItem="Lcj-AZ-Pql" firstAttribute="trailing" secondItem="dQj-AO-dJG" secondAttribute="trailing" id="nQr-9d-wfY"/>
+                            <constraint firstItem="9Vu-DJ-qbz" firstAttribute="top" secondItem="pjF-gz-ilR" secondAttribute="bottom" constant="35" id="dbh-yA-Lxn"/>
+                            <constraint firstItem="5yL-NB-5lD" firstAttribute="top" secondItem="97X-vL-HNR" secondAttribute="bottom" constant="90" id="imh-sL-fDa"/>
+                            <constraint firstItem="Ses-u8-wQG" firstAttribute="leading" secondItem="MHw-MM-oBH" secondAttribute="leading" constant="100" id="jT4-M7-aXU"/>
+                            <constraint firstItem="MHw-MM-oBH" firstAttribute="trailing" secondItem="9Vu-DJ-qbz" secondAttribute="trailing" constant="25" id="mFQ-Ng-2e5"/>
                             <constraint firstItem="pjF-gz-ilR" firstAttribute="leading" secondItem="N7L-XA-JKh" secondAttribute="leading" constant="25" id="oLM-0w-7vK"/>
-                            <constraint firstItem="MHw-MM-oBH" firstAttribute="trailing" secondItem="dQj-AO-dJG" secondAttribute="trailing" constant="20" id="wON-G5-xcp"/>
-                            <constraint firstItem="Lcj-AZ-Pql" firstAttribute="top" secondItem="pjF-gz-ilR" secondAttribute="bottom" constant="215" id="ycE-el-chB"/>
+                            <constraint firstItem="MHw-MM-oBH" firstAttribute="trailing" secondItem="5yL-NB-5lD" secondAttribute="trailing" constant="150" id="rza-nh-czM"/>
+                            <constraint firstItem="97X-vL-HNR" firstAttribute="top" secondItem="pjF-gz-ilR" secondAttribute="bottom" constant="200" id="tc8-PV-4Oy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MHw-MM-oBH"/>
                     </view>
@@ -209,6 +235,8 @@
                         <outlet property="DesiredUnitPickerView" destination="B5g-4e-ZPd" id="1Qg-s1-weQ"/>
                         <outlet property="currentSelectBtn" destination="iNk-G3-5nr" id="2Xz-LC-tYa"/>
                         <outlet property="desiredSelectBtn" destination="wVY-Xf-Bwa" id="lls-Wf-Bgg"/>
+                        <outlet property="resultLbl" destination="Ses-u8-wQG" id="dap-zR-4FT"/>
+                        <outlet property="unitTxtField" destination="7W7-DA-tEp" id="HkN-RJ-Hmk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RD4-uS-weB" userLabel="First Responder" sceneMemberID="firstResponder"/>

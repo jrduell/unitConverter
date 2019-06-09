@@ -14,6 +14,9 @@
 		1629867F229C2566001A5A7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1629867D229C2566001A5A7C /* LaunchScreen.storyboard */; };
 		1629868A229C2566001A5A7C /* metricConverterAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16298689229C2566001A5A7C /* metricConverterAppTests.swift */; };
 		167C5D6A22AD62CD0005D04F /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16298676229C2563001A5A7C /* MainVC.swift */; };
+		16B0A6CA22ADA4D8008740EE /* CustomTxtField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B0A6C922ADA4D8008740EE /* CustomTxtField.swift */; };
+		16B0A6CC22ADC86D008740EE /* calculateLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B0A6CB22ADC86D008740EE /* calculateLogic.swift */; };
+		16B0A6CD22ADC86D008740EE /* calculateLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B0A6CB22ADC86D008740EE /* calculateLogic.swift */; };
 		16E34E39229C283A006FC0DD /* CustomBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E34E38229C283A006FC0DD /* CustomBtn.swift */; };
 		16E34E3A229C283A006FC0DD /* CustomBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E34E38229C283A006FC0DD /* CustomBtn.swift */; };
 		16E34E3D229C5FAE006FC0DD /* convertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E34E3C229C5FAE006FC0DD /* convertVC.swift */; };
@@ -51,6 +54,8 @@
 		16298685229C2566001A5A7C /* metricConverterAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = metricConverterAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		16298689229C2566001A5A7C /* metricConverterAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = metricConverterAppTests.swift; sourceTree = "<group>"; };
 		1629868B229C2566001A5A7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16B0A6C922ADA4D8008740EE /* CustomTxtField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTxtField.swift; sourceTree = "<group>"; };
+		16B0A6CB22ADC86D008740EE /* calculateLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculateLogic.swift; sourceTree = "<group>"; };
 		16E34E38229C283A006FC0DD /* CustomBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBtn.swift; sourceTree = "<group>"; };
 		16E34E3C229C5FAE006FC0DD /* convertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = convertVC.swift; sourceTree = "<group>"; };
 		16E34E40229C6760006FC0DD /* userData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userData.swift; sourceTree = "<group>"; };
@@ -126,6 +131,7 @@
 				16E34E38229C283A006FC0DD /* CustomBtn.swift */,
 				16E34E49229CBD64006FC0DD /* customPickerView.swift */,
 				16E34E4C229CBDB8006FC0DD /* customStackView.swift */,
+				16B0A6C922ADA4D8008740EE /* CustomTxtField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -145,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				16E34E40229C6760006FC0DD /* userData.swift */,
+				16B0A6CB22ADC86D008740EE /* calculateLogic.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -250,6 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16B0A6CA22ADA4D8008740EE /* CustomTxtField.swift in Sources */,
 				16E34E47229C6D40006FC0DD /* findAreaVC.swift in Sources */,
 				16E34E3D229C5FAE006FC0DD /* convertVC.swift in Sources */,
 				16E34E44229C6CB0006FC0DD /* findVolumeVC.swift in Sources */,
@@ -257,6 +265,7 @@
 				16298675229C2563001A5A7C /* AppDelegate.swift in Sources */,
 				16E34E4A229CBD64006FC0DD /* customPickerView.swift in Sources */,
 				16E34E41229C6760006FC0DD /* userData.swift in Sources */,
+				16B0A6CC22ADC86D008740EE /* calculateLogic.swift in Sources */,
 				16E34E39229C283A006FC0DD /* CustomBtn.swift in Sources */,
 				16E34E4D229CBDB8006FC0DD /* customStackView.swift in Sources */,
 			);
@@ -267,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1629868A229C2566001A5A7C /* metricConverterAppTests.swift in Sources */,
+				16B0A6CD22ADC86D008740EE /* calculateLogic.swift in Sources */,
 				16E34E3A229C283A006FC0DD /* CustomBtn.swift in Sources */,
 				16E34E4B229CBD64006FC0DD /* customPickerView.swift in Sources */,
 				16E34E45229C6CB0006FC0DD /* findVolumeVC.swift in Sources */,
